@@ -1,0 +1,29 @@
+<h2>Log in</h2>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.password_field :password, autocomplete: "current-password" %>
+  </div>
+
+  <% if devise_mapping.rememberable? %>
+    <div class="field">
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me %>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit "Log in" %>
+  </div>
+<% end %>
+
+<%= link_to "Click", "https://auth.atlassian.com/authorize?audience=api.atlassian.com&client_id=JGoaRtKPti891aJHXTO4I295shjIgF5L&scope=read%3Ajira-user%20read%3Ajira-work&redirect_uri=https%3A%2F%2F55932798da64.ngrok.io%2Fusers%2Fauth%2Fatlassian_oauth2%2Fcallback&state=${YOUR_USER_BOUND_VALUE}&response_type=code&prompt=consent" %>
+
+<%= render "users/shared/links" %>
+

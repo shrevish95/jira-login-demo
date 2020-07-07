@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row mt-5">
+    <%= link_to "Login with Jira", new_jira_session_path, class: "btn btn-primary mb-2 mt-3" %>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Project</th>
+          <th scope="col">Key</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @projects.each do |project| %>
+          <tr scope="row">
+            <td><%= project.name %></td>
+            <td><%= project.key %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
